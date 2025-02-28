@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>prebook</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="navbar">
+			<h1>prebook</h1>
+		</div>
+		<div class="container">
+			<div class="book-container">
+				<h2>Rich dad poor dad</h2>
+				<h5>Robert</h5>
+				<p>Lorem ipsum dolor sit amet like some of the more and more skyuit thtuil vilaki op</p>
+				<button onclick="deletebook(event)">delete</button>
+			</div>
+		</div>
+		<!-- popup details -->
+		<div class="popup-overlay"></div>
+		<div class="popup-box">
+			<h2>Add Book</h2>
+			<form>
+				<input type="text" placeholder="book title" id="book-title">
+				<input type="text" placeholder="book Author" id="book-author">
+				<textarea placeholder="Short notes" id="notes"></textarea>
+				<button id="add_book">Add</button>
+				<button id="cancel">Cancel</button>	
+			</form>
+		</div>
+		<button class="add-button" id="add-popup-button">+</button>
+	</body>
+	<script src="scripts.js"></script>
+</html>
