@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>Student form</title>
+	</head>
+	<style>
+		.navbar{
+		background-color:blue;
+		padding:2px;
+		border-radius: 5px;
+		color:white;
+		text-align:center;
+		}
+		table,th,td{
+		border:1px solid black;
+		margin-left: 500px;
+		}
+		.table_style{
+		margin:50px;
+		}
+	</style>
+	<body>
+	<div class="navbar"> 
+		<h1>Student Form</h1>
+	</div>
+	<div class="table_style">
+		<table>
+			<tr>
+				<th>Name</th>
+				<td><input type="text" id="name"></td>
+			</tr>
+			<tr>
+				<th>Age</th>
+				<td><input type="text" id="age"></td>
+			</tr>
+			<tr>
+				<th>Gender</th>
+				<td><input type="text" id="gender"></td>
+			</tr>
+			<tr>
+				<th>Course</th>
+				<td><input type="text" id="course"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="text" id="email"></td>
+			</tr>
+			<tr>
+				<th>ADD</th>
+				<td><button id="add_student">submit</button></td>
+			</tr>
+		</table>
+	</div>
+	<table id="add">
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Gender</th>
+			<th>Course</th>
+			<th>Email</th>
+			<th>Delete</th>
+		</tr>
+		<tr>
+			<td>Muthu</td>
+			<td>25</td>
+			<td>Male</td>
+			<td>CSE</td>
+			<td>muthu@gmail.com</td>
+			<td><button onclick="deleteItems(event)">Delete</button></td>
+		</tr>
+	</table>
+	<script>
+	var append_with = document.getElementById("add")
+	var stu_name = document.getElementById("name")
+	var stu_age = document.getElementById("age")
+	var stu_gender = document.getElementById("gender")
+	var stu_course = document.getElementById("course")
+	var stu_email = document.getElementById("email")
+	var result = document.getElementById("add_student")
+	result.addEventListener("click",function(event){
+	event.preventDefault()
+	var div=document.createElement("tr")
+	div.innerHTML=`<td>${stu_name.value}</td>
+					<td>${stu_age.value}</td>
+			<td>${stu_gender.value}</td>
+			<td>${stu_course.value}</td>
+			<td>${stu_email.value}</td>
+			<td><button onclick="deleteItems(event)">Delete</button></td>`
+	append_with.append(div)
+	})
+	
+	function deleteItems(event){
+		event.target.parentElement.remove()
+	}
+	</script>
+	</body>
+</html>
